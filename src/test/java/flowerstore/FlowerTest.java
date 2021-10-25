@@ -27,7 +27,7 @@ class FlowerTest {
 
     @org.junit.jupiter.api.Test
     void getSepalLength() {
-        assertEquals(7, flower.getSepalLength());
+        assertEquals(5, flower.getSepalLength());
     }
 
     @org.junit.jupiter.api.Test
