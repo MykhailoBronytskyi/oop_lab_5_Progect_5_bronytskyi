@@ -28,19 +28,20 @@ class FlowerBucketTest {
 
     @Test
     void getPrice() {
-        assertEquals(0, bucket.getPrice());
+        assertEquals(100, bucket.getPrice());
     }
 
     @Test
     void addFlowerPack() {
         assertEquals(roses, bucket.flowerPacks.get(0));
     }
+
     @Test
     void length() {
         bucket.addFlowerPack(tulips);
         bucket.addFlowerPack(chamolines);
         System.out.println();
-        assertEquals(1, bucket.flowerPacks.size());
+        assertEquals(3, bucket.flowerPacks.size());
     }
 
     @Test
