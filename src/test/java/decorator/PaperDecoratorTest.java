@@ -1,19 +1,20 @@
-package flowerstore;
+package decorator;
 
+import flowerstore.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.sql.ResultSet;
-
 import static org.junit.jupiter.api.Assertions.*;
 
-class FlowerPackTest {
+class PaperDecoratorTest {
+
+    Item item;
+
+    private FlowerBucket bucket = new FlowerBucket();
 
     private Flower rose;
     private Flower tulip;
     private Flower chamoline;
-
-
 
     private FlowerPack roses;
     private FlowerPack tulips;
@@ -32,25 +33,18 @@ class FlowerPackTest {
         roses = new FlowerPack(rose, 10);
         tulips = new FlowerPack(tulip, 50);
         chamolines = new FlowerPack(chamoline, 30);
+
+        bucket.addFlowerPack(roses);
+        bucket.addFlowerPack(tulips);
+        bucket.addFlowerPack(chamolines);
+
+        item = new PaperDecorator(bucket);
     }
+
 
     @Test
     void getPrice() {
-        System.out.println(roses);
-        assertEquals(100, roses.getPrice());
-    }
-
-    @Test
-    void getFlower() {
-//        ResultSet.getDouble(tulips.getFlower().getSepalLength());
-        System.out.println(tulips.toString());
-        System.out.println(tulips.getFlower().toString());
-        assertEquals(tulip.toString(), tulips.getFlower().toString());
-    }
-
-    @Test
-    void getAmount() {
-        System.out.println(chamolines.getAmount());
-        assertEquals(30, chamolines.getAmount());
+        System.out.println(item.getPrice());
+        assertEquals(item.getPrice(), 453);
     }
 }

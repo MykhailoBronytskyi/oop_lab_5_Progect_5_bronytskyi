@@ -19,7 +19,7 @@ public class Store {
 
     public boolean Search(FlowerType whatFlower, int how_many){
 
-        List<FlowerPack> flowerPacks = flowerBucket.flowerPacks;
+        List<FlowerPack> flowerPacks = flowerBucket.getFlowerPacks();
         for (int i = 0; i < flowerPacks.size(); i++) {
 
             FlowerPack flowerPack = flowerPacks.get(i);

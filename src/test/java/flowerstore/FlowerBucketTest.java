@@ -9,19 +9,27 @@ class FlowerBucketTest {
 
     private FlowerBucket bucket = new FlowerBucket();
 
-    private Flower rose = new Flower(FlowerType.ROSE);
-    private Flower tulip = new Flower(FlowerType.TULIP);
-    private Flower chamoline = new Flower(FlowerType.CHAMOMILE);
+    private Flower rose;
+    private Flower tulip;
+    private Flower chamoline;
 
-    private FlowerPack roses = new FlowerPack(rose, 10);
-    private FlowerPack tulips = new FlowerPack(tulip, 50);
-    private FlowerPack chamolines = new FlowerPack(chamoline, 30);
+    private FlowerPack roses;
+    private FlowerPack tulips;
+    private FlowerPack chamolines;
 
     @BeforeEach
     void setUp() {
+        rose = new Flower(FlowerType.ROSE);
+        tulip = new Flower(FlowerType.TULIP);
+        chamoline = new Flower(FlowerType.CHAMOMILE);
+
         rose.setPrice(10);
         tulip.setPrice(5);
         chamoline.setPrice(3);
+
+        roses = new FlowerPack(rose, 10);
+        tulips = new FlowerPack(tulip, 50);
+        chamolines = new FlowerPack(chamoline, 30);
 
         bucket.addFlowerPack(roses);
     }
@@ -33,7 +41,7 @@ class FlowerBucketTest {
 
     @Test
     void addFlowerPack() {
-        assertEquals(roses, bucket.flowerPacks.get(0));
+        assertEquals(roses.toString(), bucket.getFlowerPacks().get(0).toString());
     }
 
     @Test
@@ -41,7 +49,7 @@ class FlowerBucketTest {
         bucket.addFlowerPack(tulips);
         bucket.addFlowerPack(chamolines);
         System.out.println();
-        assertEquals(3, bucket.flowerPacks.size());
+        assertEquals(3, bucket.getFlowerPacks().size());
     }
 
     @Test

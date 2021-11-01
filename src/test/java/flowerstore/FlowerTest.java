@@ -20,11 +20,13 @@ class FlowerTest {
 
     @Test
     void getPrice() {
+        System.out.println(flower.getSepalLength());
         assertEquals(10, flower.getPrice());
     }
 
     @Test
     void getFlowerType() {
+        System.out.println(flower.getFlowerType());
         assertEquals(FlowerType.CHAMOMILE, flower.getFlowerType());
     }
 
@@ -36,5 +38,11 @@ class FlowerTest {
     @Test
     void getColor() {
         assertArrayEquals(new int[] {1,2,3}, flower.getColor());
+    }
+
+    @Test
+    void copy(){
+        Flower second_flower = flower.copy();
+        System.out.println(second_flower+"\n"+flower);
     }
 }
