@@ -31,7 +31,7 @@ class PhD_In_Relativistic_Theory_And_Quantum_Physics_Delivery_StrategyTest {
 
     @Test
     void deliver() {
-        assertEquals(delivery.deliver(items),"The items will be delivered by post teleportation or antimatter warpdrive.\n" +
-                "You should know about thermonuclear danger of those methods of delivery.");
+        assertEquals(delivery.deliver(items),"The items will be delivered by post teleportation or antimatter warpdrive\n" +
+                "You should know about thermonuclear danger of those methods of delivery");
     }
 }
